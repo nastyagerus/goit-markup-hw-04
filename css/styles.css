@@ -171,7 +171,10 @@ button {
 /* =========================HERO==================================== */
 
 .hero {
-  background-color: var(--title-color-theme-light);
+  max-width: 1440px;
+  background-color: #2e2f42b2;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 188px;
   padding-bottom: 188px;
   text-align: center;
@@ -181,6 +184,7 @@ button {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/hero-image.jpg);
+  background-size: cover;
 }
 
 .hero-title {
@@ -262,6 +266,10 @@ button {
   margin-bottom: 8px;
 }
 
+.features-item {
+  max-width: 264px;
+}
+
 .features-item:not(:last-child) {
   margin-right: 24px;
 }
@@ -318,6 +326,7 @@ button {
 }
 
 .team-content {
+  max-width: 264px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -326,6 +335,31 @@ button {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
+}
+
+.team-text {
+  margin-bottom: 8px;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--text-button-color-dark);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
 }
 /* =========================/OUR_TEAM==================================== */
 
@@ -404,6 +438,10 @@ button {
   padding: 130px 156px 120px 156px;
 }
 
+.customers-headline {
+  margin-bottom: 72px;
+}
+
 /* =========================/CUSTOMERS==================================== */
 
 /* =========================FOOTER==================================== */
@@ -414,6 +452,11 @@ button {
   padding-bottom: 100px;
 }
 
+.footer-container {
+  display: flex;
+  gap: 120px;
+}
+
 .footer-logo {
   font-family: var(--secondary-font);
   font-weight: 800;
@@ -422,6 +465,7 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--logo-color-theme-dark);
+  /* margin-bottom: 16px; */
 }
 
 .footer-text {
@@ -429,8 +473,42 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color-theme-dark);
-  margin-top: 16px;
   width: 264px;
+  margin-top: 16px;
 }
 
+.footer-social-media {
+  max-width: 208px;
+  margin-left: 0;
+}
+
+.social-media-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-media-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--background-color-white);
+
+  margin-bottom: 16px;
+}
+
+.social-media-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-media-link:hover,
+.social-media-link:focus {
+  background-color: #31d0aa;
+}
 /* =========================/FOOTER==================================== */
