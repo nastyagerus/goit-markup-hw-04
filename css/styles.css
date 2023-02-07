@@ -77,7 +77,7 @@ button {
 /* =========================HEADER==================================== */
 .page-header {
   padding-top: 24px;
-  padding-bottom: 24px;
+  /* padding-bottom: 24px; */
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #e7e9fc;
@@ -85,14 +85,9 @@ button {
 
 .page-header-container {
   display: flex;
-  align-items: center;
 }
 
 .page-nav {
-  display: flex;
-}
-
-.menu-list {
   display: flex;
 }
 
@@ -117,11 +112,26 @@ button {
   color: var(--text-button-color-dark);
 }
 
+.menu-list {
+  display: flex;
+}
+
+.menu-item {
+  width: 66px;
+  height: 52px;
+}
+
 .menu-item:not(:last-child) {
   margin-right: 40px;
 }
 
 .menu-link {
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -135,12 +145,25 @@ button {
   color: var(--accent-color);
 }
 
+.menu-link:hover::after,
+.menu-link:focus::after,
+.menu-link.current::after {
+  display: inline-block;
+  color: var(--accent-color);
+  content: "";
+  width: 66px;
+  height: 4px;
+  background: #404bbf;
+  border-radius: 2px;
+}
+
 .contact {
   font-style: normal;
 }
 
 .contact-list {
   display: flex;
+  justify-content: center;
 }
 
 .contact-item:not(:last-child) {
@@ -263,12 +286,15 @@ button {
 }
 
 .features-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 264px;
   height: 112px;
   border-radius: 4px;
   background-color: var(--background-button-color-light);
   margin-bottom: 8px;
-  padding: 24px 100px;
+  /* padding: 24px 100px; */
 }
 
 .features-subtitle {
@@ -324,6 +350,7 @@ button {
 
 .team-item {
   flex-basis: calc((100% - 72px) / 4);
+  background-color: var(--background-color-white);
 }
 
 .team-item:not(:last-child) {
@@ -336,10 +363,7 @@ button {
 
 .team-content {
   max-width: 264px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   padding: 32px 16px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -435,10 +459,13 @@ button {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.works-item:hover,
-.works-item:focus {
+.works-item-link {
+  display: block;
+}
+
+.works-item-link:hover,
+.works-item-link:focus {
   background-color: var(--background-color-white);
-  border: 0.5px solid #f4f4fd;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -448,7 +475,7 @@ button {
 }
 
 .card-content {
-  padding: 32px 54px 32px 16px;
+  padding: 32px 16px 32px 16px;
 }
 
 /* =========================/PORTFOLIO==================================== */
@@ -468,27 +495,30 @@ button {
   gap: 24px;
 }
 
-.customers-icon-wrapper {
+.customers-item {
   width: 168px;
   height: 88px;
-  border: 1px solid rgba(142, 143, 153, 0.6);
-  border-radius: 4px;
-  padding: 16px 32px;
 }
 
-.customers-icon-wrapper:hover,
-.customers-icon-wrapper:focus {
-  border: 1px solid #404bbf;
+.customers-link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(142, 143, 153, 0.6);
   border-radius: 4px;
+  color: #8e8f99;
+}
+
+.customers-link-icon:hover,
+.customers-link-icon:focus {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .customers-icon {
-  fill: #afb1b8;
-}
-
-.customers-icon:hover,
-.customers-icon:focus {
-  fill: #404bbf;
+  fill: currentColor;
 }
 
 /* =========================/CUSTOMERS==================================== */
@@ -507,6 +537,7 @@ button {
 }
 
 .footer-logo {
+  display: inline-block;
   font-family: var(--secondary-font);
   font-weight: 800;
   font-size: 18px;
@@ -514,7 +545,7 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--logo-color-theme-dark);
-  /* margin-bottom: 16px; */
+  margin-bottom: 16px;
 }
 
 .footer-text {
@@ -523,7 +554,6 @@ button {
   letter-spacing: 0.02em;
   color: var(--text-color-theme-dark);
   width: 264px;
-  margin-top: 16px;
 }
 
 .footer-social-media {
